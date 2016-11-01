@@ -14,6 +14,9 @@
 		44FD84B51DC82A06002FECB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FD84B31DC82A06002FECB4 /* LaunchScreen.storyboard */; };
 		44FD84C01DC82A06002FECB4 /* codepath_week4_tuesday_labTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD84BF1DC82A06002FECB4 /* codepath_week4_tuesday_labTests.swift */; };
 		44FD84CB1DC82A06002FECB4 /* codepath_week4_tuesday_labUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD84CA1DC82A06002FECB4 /* codepath_week4_tuesday_labUITests.swift */; };
+		44FD84D91DC82AE7002FECB4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD84D81DC82AE7002FECB4 /* MainViewController.swift */; };
+		44FD84DB1DC82B01002FECB4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD84DA1DC82B01002FECB4 /* FeedViewController.swift */; };
+		44FD84DD1DC82B38002FECB4 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD84DC1DC82B38002FECB4 /* HamburgerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		44FD84C61DC82A06002FECB4 /* codepath_week4_tuesday_labUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = codepath_week4_tuesday_labUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FD84CA1DC82A06002FECB4 /* codepath_week4_tuesday_labUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codepath_week4_tuesday_labUITests.swift; sourceTree = "<group>"; };
 		44FD84CC1DC82A06002FECB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FD84D81DC82AE7002FECB4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		44FD84DA1DC82B01002FECB4 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		44FD84DC1DC82B38002FECB4 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				44FD84AA1DC82A06002FECB4 /* AppDelegate.swift */,
 				44FD84AC1DC82A06002FECB4 /* ViewController.swift */,
 				44FD84AE1DC82A06002FECB4 /* Main.storyboard */,
+				44FD84DC1DC82B38002FECB4 /* HamburgerViewController.swift */,
+				44FD84DA1DC82B01002FECB4 /* FeedViewController.swift */,
+				44FD84D81DC82AE7002FECB4 /* MainViewController.swift */,
 				44FD84B11DC82A06002FECB4 /* Assets.xcassets */,
 				44FD84B31DC82A06002FECB4 /* LaunchScreen.storyboard */,
 				44FD84B61DC82A06002FECB4 /* Info.plist */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FD84D91DC82AE7002FECB4 /* MainViewController.swift in Sources */,
 				44FD84AD1DC82A06002FECB4 /* ViewController.swift in Sources */,
+				44FD84DB1DC82B01002FECB4 /* FeedViewController.swift in Sources */,
+				44FD84DD1DC82B38002FECB4 /* HamburgerViewController.swift in Sources */,
 				44FD84AB1DC82A06002FECB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
