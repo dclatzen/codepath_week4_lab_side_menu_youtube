@@ -7,5 +7,5 @@ Devon Latzen
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](codepath_week3_assignment_mailbox.gif)
+![Video Walkthrough](codepath_week4_tuesday_lab_menu.gif)
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
