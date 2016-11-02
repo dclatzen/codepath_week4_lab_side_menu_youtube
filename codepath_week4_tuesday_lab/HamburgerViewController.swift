@@ -2,7 +2,7 @@
 //  HamburgerViewController.swift
 //  codepath_week4_tuesday_lab
 //
-//  Created by StudyBlue on 10/31/16.
+//  Created by DL on 10/31/16.
 //  Copyright © 2016 myself. All rights reserved.
 //
 
@@ -13,62 +13,64 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var feedView: UIView!
     @IBOutlet weak var menuView: UIView!
     
-    var feedViewOriginalX: CGFloat!
-    
-    var mainViewController: UIViewController!
+    var menuViewController: UIViewController!
     var feedViewController: UIViewController!
     
-    let mainStoryBoard = UIStoryboard(name: "MainViewController", bundle: nil)
-    
-    let feedStoryBoard = UIStoryboard(name: "FeedViewController", bundle: nil)
+    var feedViewOriginalX: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-
-        mainViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         
-        feedViewController = feedStoryBoard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        addChildViewController(mainViewController)
+        menuViewController = storyBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        
+        feedViewController = storyBoard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        
+        addChildViewController(menuViewController)
         addChildViewController(feedViewController)
 
-        menuView.addSubview(mainViewController.view)
+        menuView.addSubview(menuViewController.view)
         feedView.addSubview(feedViewController.view)
         
-        mainViewController.didMove(toParentViewController: self)
+        menuViewController.didMove(toParentViewController: self)
         feedViewController.didMove(toParentViewController: self)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanFeed(sender:)))
+        
+        feedView.isUserInteractionEnabled = true
+        feedView.addGestureRecognizer(panGestureRecognizer)
         
     }
 
-    @IBAction func didPanFeed(_ sender: UIPanGestureRecognizer) {
+    func didPanFeed(sender: UIPanGestureRecognizer) {
         
         let translation = sender.translation(in: view)
         let velocity = sender.velocity(in: view)
         
         if sender.state == .began {
-            
             feedViewOriginalX = feedView.center.x
             
         } else if sender.state == .changed {
-            
             feedView.center.x = feedViewOriginalX + translation.x
             
+            print ("Pan changed.")
+            
         } else if sender.state == .ended {
-
             if velocity.x > 0 {
                 
-                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [.curveEaseOut], animations: {
                     
                     self.feedView.center.x = self.feedViewOriginalX + 300
                 })
                 
             } else {
                 
-                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [.curveEaseOut], animations: {
                     
-                    self.feedView.center.x = self.feedViewOriginalX
+                    self.feedView.center.x = self.feedViewOriginalX - 300
                 })
                 
             }
